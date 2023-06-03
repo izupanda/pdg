@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  background: #fafafa;
+  color:#282828;
+}
+
+.container {
+  border-right: 1px lightgray solid;
+  border-left: 1px lightgray solid;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  padding: 20px 0;
+  background: #fafafa;
+  width: 100%;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 800;
+  display: inline-flex;
+  background: #fafafa;
+
+}
+
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+main {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.logo{
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px lightgray solid;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.content-container{
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: inherit;
+  padding: 32px;
+}
+
+footer {
+  padding: 20px 20px;
+  font-size: 0.01em;
+  color: #848484;
+  text-align: center;
+  border-top: 1px lightgray solid;
+  margin-top: auto;
+}
+
+
+.flex {
+  display: flex;
+}
+
+
+.expla-title{
+  color: #282828;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  gap: 24px;
+}
+
+input{
+  display: block;
+  width: 600px;
+  padding: 16px 24px;
+  border-radius: 80px;
+  border: 1px lightgray solid;
+  font-size: 16px;
+  text-align: center;
+}
+
+.select-wrap{	/* selectボックスの親要素 */
+	position:relative;
+}
+
+.select-wrap:after{	/* selectボックスの親要素にオリジナルの矢印を宣言 */
+  position: absolute;
+  top: 36%;
+  right: 32px;
+  font-family: "Font Awesome 5 Free"; /* Font Awesome を指定 */
+  font-weight: bold; /* ここを bold 指定しないと表示されないアイコンがある */
+  pointer-events: none; 
+  content: "\f063"; /* Font Awesome の Unicode */
+  color: #CBCBCB;
+}
+
+select{
+  display: block;
+  padding: 16px 24px;
+  padding-right: 32px;
+  width: 300px;
+  border-radius: 80px;
+  border: 1px lightgray solid;
+  font-size: 16px;
+  text-align: center;
+  color: gray;
+  appearance: none;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 24px;
+}
+
+/* チェックボックスのスタイル */
+input[type="checkbox"] {
+  display: none; /* デフォルトのチェックボックスを非表示にする */
+}
+
+/* チェックボックスのカスタムスタイル */
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  border-radius: 80px;
+  cursor: pointer;
+}
+
+.checkbox-label span {
+  background-color: #fff; /* ラベルの背景色 */
+  transition: all 0.3s ease;
+  padding: 16px 30px;
+  border-radius: 80px;
+  width: 240px;
+}
+
+/* チェックボックスがチェックされたときのラベルのスタイル */
+.checkbox-label input[type="checkbox"]:checked + span {
+  background-color: #EAEAEA; /* ラベルの背景色（チェックされた状態） */
+  color: #282828; /* ラベルの文字色（チェックされた状態） */
+  padding: 16px 30px;
+
+}
+
+
+button {
+  padding: 32px 80px;
+  background: #5FC656;
+  color: #fff;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+  margin: 120px auto;
+  margin-bottom: 0px;
+  display: flex;
+  font-size: 32px;
+  font-weight: 600;
+  width: 480px;
+  text-align: center;
+  justify-content: center;
+}
+
+.small-button{
+  font-size: 16px;
+  width: 280px;
+  padding: 16px 60px;
+  text-align: center;
+  justify-content: center;
+}
+
+.graybutton{
+  background-color: #EAEAEA;
+  color: #848484;
+  margin-top: 0px;
+  margin-bottom: 100px;
+}
+
+.content-title-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ss-button{
+  font-size: 10px;
+  background-color: #EAEAEA;
+  color: gray;
+  width: 100px;
+  padding: 8px 16px;
+  border-radius: 24px;
+  margin-right: 0;
+  margin-top: 0px;
+}
+
+
+p {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #282828;
+}
+
+
+.title{
+  text-align: center;
+  margin: 80px 0px 40px 0px;
+  color: #282828;
+  font-size: 48px;
+  justify-content: center;
+}
+
+.icon-button{
+  margin-top: 4px;
+  margin-right: 12px;
+}
