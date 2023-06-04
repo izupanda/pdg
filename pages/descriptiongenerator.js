@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import Image from 'next/image';
 
 const DescriptionGenerator = () => {
   const [productName, setProductName] = useState('');
@@ -55,7 +56,7 @@ const DescriptionGenerator = () => {
   return (
     <div className='container'>
       <div className="logo">
-        <img src='assets/logo.svg' alt='Logo' />
+        <Image src='assets/logo.svg' alt='Logo' />
       </div>
       <div className='input-container'>
         <span className='expla-title'>出品したい商品名をここに入力してください</span>
