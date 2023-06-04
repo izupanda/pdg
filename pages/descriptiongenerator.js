@@ -26,7 +26,8 @@ const DescriptionGenerator = () => {
   const generateDescription = async () => {
     try {
 
-      const res = await axios.post(`${process.env.API_URL}/generate-description`, { 
+      console.log('Posting to URL:', `${process.env.NEXT_PUBLIC_API_URL}/generate-description`);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/generate-description`, { 
         productName, 
         marketplace, 
         condition 
@@ -56,7 +57,7 @@ const DescriptionGenerator = () => {
   return (
     <div className='container'>
       <div className="logo">
-        <Image src='assets/logo.svg' alt='Logo' />
+        <img src='assets/logo.svg' alt='Logo' />
       </div>
       <div className='input-container'>
         <span className='expla-title'>出品したい商品名をここに入力してください</span>
