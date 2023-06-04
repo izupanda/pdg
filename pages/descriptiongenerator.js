@@ -25,7 +25,7 @@ const DescriptionGenerator = () => {
   const generateDescription = async () => {
     try {
 
-      const res = await axios.post(`${process.env.API_URL}/generate-description`, data), { 
+      const res = await axios.post('${process.env.API_URL}/generate-description'）, { 
         productName, 
         marketplace, 
         condition 
