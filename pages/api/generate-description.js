@@ -3,7 +3,7 @@ import axios from 'axios';
 export default async function handler(req, res) {
   try {
     const { productName, marketplace, condition } = req.body;
-
+  
     const chatGptResponse = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: 'gpt-3.5-turbo',
       messages: [
@@ -17,6 +17,11 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
       }
     });
+  } catch (err) {
+    console.error('Error in POST to OpenAI:', err);
+    // ...
+  }
+  
 
     const fullResponse = chatGptResponse.data.choices[0].message.content;
 
