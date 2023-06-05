@@ -37,6 +37,8 @@ export default async function handler(req, res) {
     }
 
     const fullResponse = chatGptResponse.data.choices[0].message.content;
+    console.log('Full Response from OpenAI:', fullResponse); // Adding log for the full response
+
     const itemTitleStart = '商品名：';
     const itemDescriptionStart = '商品説明文：';
 
@@ -45,6 +47,9 @@ export default async function handler(req, res) {
 
     const itemTitle = fullResponse.slice(itemTitleIndex, itemDescriptionIndex).trim();
     const itemDescription = fullResponse.slice(itemDescriptionIndex + itemDescriptionStart.length).trim();
+
+    console.log('Extracted Item Title:', itemTitle); // Adding log for the extracted item title
+    console.log('Extracted Item Description:', itemDescription); // Adding log for the extracted item description
 
     res.status(200).json({ itemTitle, itemDescription });
 
