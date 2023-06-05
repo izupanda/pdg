@@ -21,6 +21,17 @@ export default async function handler(req, res) {
       });
     } catch (err) {
       console.error('Error in POST to OpenAI:', err);
+      
+      // Log response data if it exists
+      if (err.response) {
+        console.error('Response data from OpenAI:', err.response.data);
+      }
+      
+      // Log request if response was not received
+      if (err.request) {
+        console.error('Request made to OpenAI:', err.request);
+      }
+      
       // Return from the function if there is an error.
       return res.status(500).json({ error: err.message });
     }
