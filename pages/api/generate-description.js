@@ -37,19 +37,16 @@ export default async function handler(req, res) {
     }
 
     const fullResponse = chatGptResponse.data.choices[0].message.content;
+    const itemTitleStart = '商品名：';
+    const itemDescriptionStart = '商品説明文：';
 
-    // assuming the format is "item title: [title] --- description: [description]"
-    let [itemTitle, description] = fullResponse.split('---').map(str => str.trim());
+    const itemTitleIndex = fullResponse.indexOf(itemTitleStart) + itemTitleStart.length;
+    const itemDescriptionIndex = fullResponse.indexOf(itemDescriptionStart);
 
-    // Check if itemTitle and description are string, if not, convert them to string
-    if (typeof itemTitle !== 'string') {
-      itemTitle = JSON.stringify(itemTitle);
-    }
-    if (typeof description !== 'string') {
-      description = JSON.stringify(description);
-    }
+    const itemTitle = fullResponse.slice(itemTitleIndex, itemDescriptionIndex).trim();
+    const itemDescription = fullResponse.slice(itemDescriptionIndex + itemDescriptionStart.length).trim();
 
-    res.status(200).json({ itemTitle, description });
+    res.status(200).json({ itemTitle, itemDescription });
 
   } catch (err) {
     if (err.response && err.response.data) {
